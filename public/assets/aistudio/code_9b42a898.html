@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'tertiary-container': '#b2e1ff', 'on-tertiary': '#00354a', 'on-surface': '#e2e2ea', 'on-secondary-fixed-variant': '#5516be', 'secondary-container': '#571bc1', 'secondary-fixed': '#e9ddff', 'outline-variant': '#3a494b', 'on-tertiary-fixed-variant': '#004c69', 'background': '#111319', 'surface-tint': '#00dce6', 'secondary-fixed-dim': '#d0bcff', 'on-surface-variant': '#b9cacb', 'tertiary-fixed': '#c4e7ff', 'on-secondary-fixed': '#23005c', 'on-primary-fixed-variant': '#004f53', 'error-container': '#93000a', 'on-primary': '#00373a', 'on-primary-container': '#006a70', 'error': '#ffb4ab', 'on-tertiary-fixed': '#001e2c', 'surface-bright': '#37393f', 'surface-container-low': '#191c21', 'secondary': '#d0bcff', 'outline': '#849495', 'surface-dim': '#111319', 'primary-fixed': '#6ff6ff', 'primary-fixed-dim': '#00dce6', 'surface-variant': '#33353b', 'primary-container': '#00f2fe', 'on-error': '#690005', 'surface-container-highest': '#33353b', 'surface-container': '#1d2025', 'tertiary-fixed-dim': '#7bd0ff', 'on-secondary': '#3c0091', 'primary': '#e0fdff', 'on-tertiary-container': '#00678c', 'on-background': '#e2e2ea', 'inverse-on-surface': '#2e3036', 'surface-container-high': '#282a30', 'inverse-primary': '#00696f', 'on-primary-fixed': '#002022', 'surface-container-lowest': '#0c0e13', 'inverse-surface': '#e2e2ea', 'surface': '#111319', 'on-secondary-container': '#c4abff', 'tertiary': '#f1f8ff', 'on-error-container': '#ffdad6' }, borderRadius: { 'DEFAULT': '1rem', 'lg': '2rem', 'xl': '3rem', 'full': '9999px' }, spacing: { 'space-xl': '2.5rem', 'space-md': '1rem', 'space-sm': '0.5rem', 'margin-mobile': '1.25rem', 'space-xs': '0.25rem', 'space-lg': '1.5rem', 'gutter': '1.5rem', 'margin': '3rem', 'gutter-mobile': '1rem' }, fontFamily: { 'label-code': ['JetBrains Mono'], 'body-lg': ['Geist'], 'display-hero-mobile': ['Space Grotesk'], 'display-hero': ['Space Grotesk'], 'headline-xl-mobile': ['Space Grotesk'], 'headline-md': ['Space Grotesk'], 'headline-lg': ['Space Grotesk'], 'body-sm': ['Geist'], 'label-telemetry': ['JetBrains Mono'], 'headline-xl': ['Space Grotesk'], 'body-md': ['Geist'] }, fontSize: { 'label-code': ['0.8125rem', { lineHeight: '1.2rem', letterSpacing: '0.02em', fontWeight: '500' }], 'body-lg': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em', fontWeight: '400' }], 'display-hero-mobile': ['2.75rem', { lineHeight: '3.125rem', letterSpacing: '-0.03em', fontWeight: '700' }], 'display-hero': ['4.5rem', { lineHeight: '5rem', letterSpacing: '-0.04em', fontWeight: '700' }], 'headline-xl-mobile': ['2rem', { lineHeight: '2.5rem', letterSpacing: '-0.02em', fontWeight: '600' }], 'headline-md': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.015em', fontWeight: '500' }], 'headline-lg': ['2rem', { lineHeight: '2.5rem', letterSpacing: '-0.02em', fontWeight: '600' }], 'body-sm': ['0.8125rem', { lineHeight: '1.25rem', fontWeight: '400' }], 'label-telemetry': ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.08em', fontWeight: '600' }], 'headline-xl': ['3rem', { lineHeight: '3.5rem', letterSpacing: '-0.03em', fontWeight: '600' }], 'body-md': ['0.9375rem', { lineHeight: '1.5rem', letterSpacing: '-0.005em', fontWeight: '400' }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#111319;color:#e2e2ea;font-family:'Geist',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes pulse-halo{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.3);}}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="AG Monogram Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrA6H0aBM8bRKwGNIouZipmgnaGG1FgwGew4vmavsqI7FOSeRS88tIZhXg_D3GJbbQME2AqDG_vOax02YaOkvlO5ZaSN2LcusSkdJh2w2Hc4JC1ORW14AjIHNJ0r_nLDjYP-zRFS21DGMbd7I4Qz7FOJ1B19Qpe4MW5G50laSYPSyJ75u4KJW0RfChHS1WyYWwhyn_zXJ31nXbOXmpTLT5Lcvlc25n6ZIl66FkAWHCWT"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-body-md font-semibold tracking-tight text-on-surface truncate">Anmol Gola</span><span class="text-primary-container font-label-telemetry text-label-telemetry opacity-75">/</span><span class="font-label-telemetry text-label-telemetry text-on-surface-variant uppercase tracking-widest truncate">Work</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span></span><span class="font-label-telemetry text-label-telemetry text-primary-container uppercase tracking-wider">Available for Opportunities</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface px-margin-mobile"><div class="flex flex-col w-full gap-space-lg">
+<!-- Atmospheric Ambient Halos -->
+<div class="relative w-full overflow-hidden rounded-lg bg-surface-container-lowest p-space-md shadow-xl">
+<div class="absolute -top-16 -left-16 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-16 -right-16 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header Meta & Context Block -->
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary-container font-label-telemetry text-label-telemetry uppercase tracking-wider">
+<span class="h-1.5 w-1.5 rounded-full bg-primary-container animate-pulse"></span>
+          Autonomous Workstream
+        </span>
+<span class="font-label-telemetry text-label-telemetry text-on-surface-variant">NODE // PROD-V4</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface tracking-tight mt-1">
+        Featured Systems
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Architecting frontier machine intelligence models and culturally grounded hyper-scale web applications.
+      </p>
+<!-- Key Performance Metrics Strip -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-sm border-t-0">
+<div class="flex flex-col bg-surface-container-high/80 rounded p-space-xs text-center">
+<span class="font-label-telemetry text-label-telemetry text-on-surface-variant uppercase">Total Stars</span>
+<span class="font-display-hero-mobile text-headline-md text-primary-container font-bold">1.4k+</span>
+</div>
+<div class="flex flex-col bg-surface-container-high/80 rounded p-space-xs text-center">
+<span class="font-label-telemetry text-label-telemetry text-on-surface-variant uppercase">Infer Latency</span>
+<span class="font-display-hero-mobile text-headline-md text-secondary font-bold">18ms</span>
+</div>
+<div class="flex flex-col bg-surface-container-high/80 rounded p-space-xs text-center">
+<span class="font-label-telemetry text-label-telemetry text-on-surface-variant uppercase">Model Acc</span>
+<span class="font-display-hero-mobile text-headline-md text-surface-tint font-bold">99.4%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Category Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar" id="category-filter-bar">
+<button class="filter-btn active flex-shrink-0 flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-telemetry text-label-telemetry transition-all shadow-md" data-filter="all">
+<span>ALL</span>
+<span class="px-1 py-0.2 rounded-full bg-on-primary-container/20 font-label-code text-[10px]">4</span>
+</button>
+<button class="filter-btn flex-shrink-0 flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-telemetry text-label-telemetry hover:text-on-surface transition-all" data-filter="ai">
+<span>AI / ML</span>
+<span class="px-1 py-0.2 rounded-full bg-surface-container-high font-label-code text-[10px]">2</span>
+</button>
+<button class="filter-btn flex-shrink-0 flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-telemetry text-label-telemetry hover:text-on-surface transition-all" data-filter="web">
+<span>WEB PLATFORMS</span>
+<span class="px-1 py-0.2 rounded-full bg-surface-container-high font-label-code text-[10px]">2</span>
+</button>
+<button class="filter-btn flex-shrink-0 flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-telemetry text-label-telemetry hover:text-on-surface transition-all" data-filter="opensource">
+<span>OPEN SOURCE</span>
+<span class="px-1 py-0.2 rounded-full bg-surface-container-high font-label-code text-[10px]">1</span>
+</button>
+</div>
+<!-- Projects List Stream -->
+<div class="flex flex-col gap-space-lg" id="projects-container">
+<!-- PROJECT 1: TRACE MAIL -->
+<article class="project-card flex flex-col rounded-lg bg-surface-container p-space-md relative overflow-hidden transition-all duration-300 shadow-lg" data-category="ai">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry text-label-telemetry text-primary-container tracking-widest uppercase">SPEAR-PHISHING DEFENSE</span>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-telemetry text-[10px] text-on-surface-variant font-semibold">99.4% PRECISION</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">TRACE MAIL</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Intelligent Spear-Phishing &amp; Cognitive Fraud Analysis Engine powered by distilled transformer architectures.
+      </p>
+<!-- Architecture Visual Mockup -->
+<div class="relative w-full h-44 rounded-DEFAULT overflow-hidden my-space-md bg-surface-container-lowest flex flex-col justify-end p-space-sm group">
+<div class="absolute inset-0 bg-cover bg-center opacity-70" data-alt="Technical architectural diagram of an AI inference pipeline with neural nodes glowing in cyber cyan and dark violet on an obsidian background, highly detailed vector blueprint visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvLGmo-rRPD9hpIYzlkb6733E6ZMRkne1nbgOW_3NZczMsKUDKWP-voUteOoMIekTO5N6V1jzG8AMiHnWCMVBCTrivpmOKTGJinMnXpryWsUarZiLUN5WteY-F53YX94poCtnhZfXON5iGUdI_oPH9wdsvLVSGM14c9cTgx_CtIYHayya--ZZQTe4fLoerLKjXGgKjFkC1VWer5rlC2SkV9UAACc_ZhscimHvFOrs')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary bg-surface-container-high/90 px-space-xs py-0.5 rounded">
+            BERT-Distil • 14ms Embed
+          </span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">schema</span>
+</div>
+</div>
+<!-- Live Interactive Test Preview Drawer -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high p-space-sm rounded-DEFAULT">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry text-[10px] text-on-surface-variant uppercase tracking-wider">Cognitive Heuristics Inspector</span>
+<span class="font-label-code text-[10px] text-primary-container">FAST_API v0.104</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest rounded-full px-space-sm py-1">
+<span class="material-symbols-outlined text-[16px] text-outline">alternate_email</span>
+<input class="w-full bg-transparent font-label-code text-label-code text-on-surface focus:outline-none placeholder-outline-variant" id="trace-sample-input" readonly="" type="text" value="URGENT: Re-verify wire credentials"/>
+<button class="px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-telemetry text-[10px] font-semibold whitespace-nowrap" id="trace-eval-btn">
+            SCAN
+          </button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm mt-0.5" id="trace-verdict">
+<span class="font-label-code text-[11px] text-error font-medium">Anomaly Detected: High-entropy Urgency Vector</span>
+<span class="font-label-telemetry text-[10px] text-on-surface-variant">Conf: 99.8%</span>
+</div>
+</div>
+<!-- Tech Stack Badges -->
+<div class="flex flex-wrap gap-1.5 mt-space-md">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Transformers</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">PyTorch 2.3</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">FastAPI</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Next.js</span>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-md mt-space-md border-t-0">
+<a class="flex items-center gap-1 font-label-telemetry text-label-telemetry text-on-surface-variant hover:text-primary transition-colors" href="https://github.com" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>REPO // TRACE-ML</span>
+</a>
+<button class="modal-trigger flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-high text-primary-container font-label-telemetry text-label-telemetry font-semibold hover:bg-surface-container-highest transition-colors" data-project="TRACE MAIL">
+<span>DEEP DIVE</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- PROJECT 2: BHAKTIPATH -->
+<article class="project-card flex flex-col rounded-lg bg-surface-container p-space-md relative overflow-hidden transition-all duration-300 shadow-lg" data-category="web">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry text-label-telemetry text-secondary tracking-widest uppercase">SPATIAL CULTURAL ARCHIVE</span>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-telemetry text-[10px] text-on-surface-variant font-semibold">BRAJ REGION</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">BHAKTIPATH</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Immersive Heritage &amp; Spiritual Navigation Platform preserving pilgrimage footpaths via georeferenced audio oral narratives.
+      </p>
+<!-- Geotagged Map Visual Representation -->
+<div class="w-full h-44 rounded-DEFAULT bg-cover bg-center my-space-md relative flex flex-col justify-between p-space-sm overflow-hidden" data-location="Vrindavan, Uttar Pradesh, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFBFMp9ioO9IaBMvu7sAWkypwnkBffPVqVQ2yE5hm7UFLhtHa4iLtnhw6RBWS4wjMRA_DtDBPn9kHffA-782X5-qwx27nDtgoZN1FlIfgioeLG1SYXaZQbSif_pcL9EBCX04JfgG2PsTcyJwY8YVK1cQQisCh9bUQvPFCpFosLrU_4RMR54NeTLsIfQw1Qp36CDfuiDuiu533alUjia4PWVq3o4zWJA-1C-xs41-Q')">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest/60 via-transparent to-surface-container-lowest/80"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-telemetry text-[10px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[14px]">pin_drop</span>
+            27.5804° N, 77.7006° E
+          </span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-telemetry text-[10px]">
+            ACTIVE GPS
+          </span>
+</div>
+<!-- Audio Interactive Strip Mockup -->
+<div class="relative z-10 flex items-center justify-between bg-surface-container/90 backdrop-blur-md rounded-DEFAULT p-space-xs">
+<button class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary" id="bhakti-audio-toggle">
+<span class="material-symbols-outlined text-[18px]" id="bhakti-play-icon">play_arrow</span>
+</button>
+<div class="flex flex-col flex-1 px-space-xs min-w-0">
+<span class="font-label-telemetry text-[10px] text-on-surface truncate">Vrindavan Parikrama // Story #14</span>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-1 overflow-hidden">
+<div class="bg-secondary h-1 rounded-full w-1/3 transition-all duration-300" id="audio-progress-bar"></div>
+</div>
+</div>
+<span class="font-label-code text-[10px] text-on-surface-variant">02:14</span>
+</div>
+</div>
+<!-- Tech Stack Badges -->
+<div class="flex flex-wrap gap-1.5 mt-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Mapbox GL</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Web Audio API</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Spatial PostGIS</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">React Native</span>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-md mt-space-md border-t-0">
+<a class="flex items-center gap-1 font-label-telemetry text-label-telemetry text-on-surface-variant hover:text-primary transition-colors" href="https://github.com" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>EXPLORE MAPS</span>
+</a>
+<button class="modal-trigger flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-high text-secondary font-label-telemetry text-label-telemetry font-semibold hover:bg-surface-container-highest transition-colors" data-project="BHAKTIPATH">
+<span>DETAILS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- PROJECT 3: COMMUNITY LAUNCHPAD -->
+<article class="project-card flex flex-col rounded-lg bg-surface-container p-space-md relative overflow-hidden transition-all duration-300 shadow-lg" data-category="web opensource">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry text-label-telemetry text-tertiary-fixed-dim tracking-widest uppercase">DEVELOPER ECOSYSTEM</span>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-telemetry text-[10px] text-on-surface-variant font-semibold">12.8K BUILDERS</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">COMMUNITY LAUNCHPAD</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Distributed Hackathon Orchestration Hub with autonomous skill-matching heuristics for student engineering pods.
+      </p>
+<!-- Analytics Dashboard Preview Mockup -->
+<div class="w-full rounded-DEFAULT bg-surface-container-lowest p-space-sm my-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">groups</span>
+<span class="font-label-telemetry text-label-telemetry text-on-surface uppercase">Live Hackathon Cohort</span>
+</div>
+<span class="font-label-telemetry text-[10px] text-primary-container">98% SEED OCCUPANCY</span>
+</div>
+<!-- Inline SVG Sparkline -->
+<div class="h-20 w-full relative flex items-end">
+<svg class="w-full h-full text-primary-container" preserveaspectratio="none" viewbox="0 0 300 70">
+<defs>
+<lineargradient id="grad-spark" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#00f2fe" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#00f2fe" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,60 Q20,50 45,55 T90,30 T135,40 T180,15 T225,25 T270,10 L300,5 L300,70 L0,70 Z" fill="url(#grad-spark)"></path>
+<path d="M0,60 Q20,50 45,55 T90,30 T135,40 T180,15 T225,25 T270,10 L300,5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-1">
+<div class="flex items-center justify-between bg-surface-container-high/60 px-space-xs py-1 rounded">
+<span class="font-label-telemetry text-[10px] text-on-surface-variant">Pod Matches</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">412 Teams</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-high/60 px-space-xs py-1 rounded">
+<span class="font-label-telemetry text-[10px] text-on-surface-variant">Review Rate</span>
+<span class="font-label-code text-label-code text-primary-container font-semibold">1.2m / eval</span>
+</div>
+</div>
+</div>
+<!-- Tech Stack Badges -->
+<div class="flex flex-wrap gap-1.5 mt-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Go / Fiber</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">PostgreSQL</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Redis Queue</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">Docker</span>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-md mt-space-md border-t-0">
+<a class="flex items-center gap-1 font-label-telemetry text-label-telemetry text-on-surface-variant hover:text-primary transition-colors" href="https://github.com" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>OPEN CORE</span>
+</a>
+<button class="modal-trigger flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-high text-primary font-label-telemetry text-label-telemetry font-semibold hover:bg-surface-container-highest transition-colors" data-project="COMMUNITY LAUNCHPAD">
+<span>PLATFORM STATS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- PROJECT 4: NEURAL CANVAS -->
+<article class="project-card flex flex-col rounded-lg bg-surface-container p-space-md relative overflow-hidden transition-all duration-300 shadow-lg" data-category="ai opensource">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry text-label-telemetry text-surface-tint tracking-widest uppercase">LATENT COMPUTE • 60 FPS</span>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span>
+<span class="font-label-telemetry text-[10px] text-on-surface-variant font-semibold">WEBGL SHADER</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">NEURAL CANVAS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Real-time multi-dimensional vector manifold visualizer projecting high-dimensional neural network weights directly onto canvas shaders.
+      </p>
+<!-- WebGL / Canvas Placeholder Preview -->
+<div class="relative w-full h-44 rounded-DEFAULT overflow-hidden my-space-md bg-surface-container-lowest flex items-center justify-center p-space-sm group">
+<div class="absolute inset-0 bg-cover bg-center opacity-85" data-alt="Dynamic 3D abstract visualization of neural manifold topography in deep space with luminous cyan and magenta particle streams bending along vector coordinates" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQjUs7zBCvZyEocU-GOQ6e1MSL1jAR2FIL0DqUnyFEYLW2eLqtYKlCXeM-z8Ie433VDosrlN8R2b-12MRj2Oisa_SCuFyv66tXZsxGS9qfGz1Tw8AMhHvomwm6QBC8sSGwz23-xG7QIDW4nS0S-PL53R2A2USIFGGK3N0V0_bcyJ3rGzqfuEby1diLK-wLNdJmV5vuTuescfHV7J3gvhQw8VzVoo64mGa0hvvo81c')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="relative z-10 flex flex-col items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-telemetry text-[11px] flex items-center gap-1.5 shadow-lg active:scale-95 transition-transform" id="toggle-latent-sim">
+<span class="material-symbols-outlined text-[16px] text-primary-container">rotate_right</span>
+<span>CYCLE MANIFOLD AXIS</span>
+</button>
+</div>
+</div>
+<!-- Benchmarks telemetry -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-lowest p-space-xs rounded-DEFAULT">
+<div class="flex items-center gap-1.5 px-space-xs py-1">
+<span class="material-symbols-outlined text-primary-container text-[16px]">speed</span>
+<div class="flex flex-col">
+<span class="font-label-telemetry text-[10px] text-on-surface-variant">Frame Timing</span>
+<span class="font-label-code text-label-code text-on-surface">16.6ms (60 FPS)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">memory</span>
+<div class="flex flex-col">
+<span class="font-label-telemetry text-[10px] text-on-surface-variant">Memory Footprint</span>
+<span class="font-label-code text-label-code text-on-surface">&lt; 42MB VRAM</span>
+</div>
+</div>
+</div>
+<!-- Tech Stack Badges -->
+<div class="flex flex-wrap gap-1.5 mt-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">WebGL 2.0</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">GLSL Shaders</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">TypeScript</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[11px]">TensorFlow.js</span>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-space-md mt-space-md border-t-0">
+<a class="flex items-center gap-1 font-label-telemetry text-label-telemetry text-on-surface-variant hover:text-primary transition-colors" href="https://github.com" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">data_object</span>
+<span>VIEW SHADER CODE</span>
+</a>
+<button class="modal-trigger flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-high text-surface-tint font-label-telemetry text-label-telemetry font-semibold hover:bg-surface-container-highest transition-colors" data-project="NEURAL CANVAS">
+<span>RUN SANDBOX</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Direct CTA / Case Study Inquiry -->
+<section class="flex flex-col rounded-lg bg-surface-container-high p-space-md relative overflow-hidden shadow-xl mt-space-sm">
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">terminal</span>
+<span class="font-label-telemetry text-label-telemetry text-primary-container uppercase tracking-wider">COLLABORATION INGEST</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Need a custom architecture or deep-dive deck?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      Detailed technical whitepapers, proprietary code walkthroughs, and benchmark logs are available upon verified engineering review.
+    </p>
+<div class="flex flex-col gap-space-xs mt-space-md">
+<a class="w-full flex items-center justify-center gap-2 py-3 px-space-md rounded-full bg-primary-container text-on-primary-container font-label-telemetry text-label-telemetry font-semibold tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md" href="mailto:anmol@example.com?subject=Case%20Study%20Access%20Request">
+<span>REQUEST CASE STUDY WHITE PAPERS</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</a>
+<a class="w-full flex items-center justify-center gap-2 py-2.5 px-space-md rounded-full bg-surface-container text-on-surface-variant font-label-telemetry text-label-telemetry hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>BOOK 20-MIN ARCHITECTURE SYNC</span>
+</a>
+</div>
+</section>
+<!-- Interactive Project Detail Drawer / Sheet (Hidden by default) -->
+<div class="fixed inset-0 z-50 flex items-end justify-center bg-surface-container-lowest/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="project-modal">
+<div class="w-full max-w-lg bg-surface-container-high rounded-t-xl p-space-md shadow-2xl flex flex-col gap-space-md transform translate-y-full transition-transform duration-300" id="project-modal-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-telemetry text-label-telemetry text-primary-container uppercase" id="modal-project-title">PROJECT TELEMETRY</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="modal-close">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface" id="modal-project-head">TRACE MAIL Deep Dive</span>
+<p class="font-body-md text-body-md text-on-surface-variant" id="modal-project-desc">
+          Production telemetry shows an average processing overhead of 14.2ms per email packet with zero false-negative critical escape breaches across 400k validation datasets.
+        </p>
+</div>
+<div class="flex flex-col gap-1 bg-surface-container p-space-sm rounded-DEFAULT font-label-code text-label-code text-on-surface-variant">
+<div class="flex justify-between">
+<span>Inference Hardware:</span>
+<span class="text-primary-container">NVIDIA A100 (vLLM)</span>
+</div>
+<div class="flex justify-between">
+<span>Architecture:</span>
+<span class="text-on-surface">Custom DistilRoBERTa</span>
+</div>
+<div class="flex justify-between">
+<span>Quantization:</span>
+<span class="text-on-surface">INT8 TensorRT</span>
+</div>
+</div>
+<div class="flex gap-space-xs mt-space-xs">
+<button class="flex-1 py-3 rounded-full bg-primary-container text-on-primary-container font-label-telemetry text-label-telemetry font-semibold" id="modal-action-btn">
+          LAUNCH LIVE RUNTIME
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initShowcaseInteractions() {
+    // 1. Dynamic Category Filtering
+    const filterButtons = document.querySelectorAll('#category-filter-bar .filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        
+        // Update active filter style
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-md');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-md');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+        // Filter cards
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 2. Interactive Email Scan Micro-interaction
+    const evalBtn = document.getElementById('trace-eval-btn');
+    const traceVerdict = document.getElementById('trace-verdict');
+    const traceInput = document.getElementById('trace-sample-input');
+
+    const sampleEmails = [
+      { text: "URGENT: Re-verify wire credentials", verdict: "Anomaly Detected: High-entropy Urgency Vector", conf: "99.8%", color: "text-error" },
+      { text: "Team lunch moved to 1:00 PM next Friday", verdict: "Clean: Natural Language Colloquial Flow", conf: "99.9%", color: "text-primary-container" },
+      { text: "Your account is locked: Click here immediately", verdict: "Phishing Vector: Obfuscated Domain Link", conf: "99.6%", color: "text-error" }
+    ];
+    let sampleIdx = 0;
+
+    if (evalBtn && traceVerdict && traceInput) {
+      evalBtn.addEventListener('click', () => {
+        sampleIdx = (sampleIdx + 1) % sampleEmails.length;
+        const current = sampleEmails[sampleIdx];
+        traceInput.value = current.text;
+        
+        traceVerdict.innerHTML = `
+          <span class="font-label-code text-[11px] ${current.color} font-medium">${current.verdict}</span>
+          <span class="font-label-telemetry text-[10px] text-on-surface-variant">Conf: ${current.conf}</span>
+        `;
+      });
+    }
+
+    // 3. Audio Narration Player Mockup
+    const audioBtn = document.getElementById('bhakti-audio-toggle');
+    const audioIcon = document.getElementById('bhakti-play-icon');
+    const progressBar = document.getElementById('audio-progress-bar');
+    let isPlaying = false;
+    let audioTimer = null;
+    let progressVal = 33;
+
+    if (audioBtn && audioIcon && progressBar) {
+      audioBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          audioIcon.textContent = 'pause';
+          audioTimer = setInterval(() => {
+            progressVal = (progressVal + 2) % 100;
+            progressBar.style.width = progressVal + '%';
+          }, 300);
+        } else {
+          audioIcon.textContent = 'play_arrow';
+          clearInterval(audioTimer);
+        }
+      });
+    }
+
+    // 4. Manifold Axis Shuffler (Neural Canvas)
+    const manifoldBtn = document.getElementById('toggle-latent-sim');
+    const axes = ['LATENT_DIM_04 // W-SPACE', 'PCA_AXIS_PROJECTION', 'T-SNE CLUSTER // 4096D', 'ATTENTION_HEAD_08'];
+    let axisIdx = 0;
+
+    if (manifoldBtn) {
+      manifoldBtn.addEventListener('click', () => {
+        axisIdx = (axisIdx + 1) % axes.length;
+        manifoldBtn.querySelector('span:last-child').textContent = axes[axisIdx];
+      });
+    }
+
+    // 5. Deep Dive Bottom Sheet Modal
+    const modal = document.getElementById('project-modal');
+    const modalCard = document.getElementById('project-modal-card');
+    const modalClose = document.getElementById('modal-close');
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modalHead = document.getElementById('modal-project-head');
+
+    function openModal(title) {
+      if (modal && modalCard) {
+        modalHead.textContent = title + ' Architecture Analysis';
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modalCard.classList.remove('translate-y-full');
+      }
+    }
+
+    function closeModal() {
+      if (modal && modalCard) {
+        modalCard.classList.add('translate-y-full');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    modalTriggers.forEach(t => {
+      t.addEventListener('click', () => {
+        const pName = t.getAttribute('data-project') || 'System';
+        openModal(pName);
+      });
+    });
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closeModal);
+    }
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+  })();
+</script><footer class="mt-space-xl pt-space-lg pb-space-lg flex flex-col items-center gap-space-md text-center bg-surface-container-lowest/60 rounded-xl px-space-md"><div class="flex items-center justify-center gap-space-md"><a aria-label="GitHub" class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="https://github.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[20px]">terminal</span></a><a aria-label="LinkedIn" class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="https://linkedin.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[20px]">share</span></a><a aria-label="Email" class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="mailto:anmol@example.com"><span class="material-symbols-outlined text-[20px]">alternate_email</span></a><button aria-label="Back to top" class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="material-symbols-outlined text-[20px]">arrow_upward</span></button></div><div class="flex flex-col items-center gap-space-xs"><p class="font-label-telemetry text-label-telemetry text-outline tracking-wider uppercase">© 2025 Anmol Gola. All Systems Autonomous.</p><span class="font-label-code text-label-code text-on-surface-variant/70">Engineered with AI / ML Precision</span></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.4)]" data-active-classes="text-primary-container bg-surface-container-high/90 font-medium"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 px-space-xs py-1 rounded-DEFAULT min-w-[48px] h-12 text-on-surface-variant transition-all" data-path="home" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span class="font-label-telemetry text-label-telemetry text-[10px] tracking-tight">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 px-space-xs py-1 rounded-DEFAULT min-w-[48px] h-12 transition-all text-primary-container bg-surface-container-high/90 font-medium" data-path="work" href="#"><span class="material-symbols-outlined text-[20px]">code_blocks</span><span class="font-label-telemetry text-label-telemetry text-[10px] tracking-tight">Work</span></a><a class="flex flex-col items-center justify-center gap-0.5 px-space-xs py-1 rounded-DEFAULT min-w-[48px] h-12 text-on-surface-variant transition-all" data-path="experience" href="#"><span class="material-symbols-outlined text-[20px]">timeline</span><span class="font-label-telemetry text-label-telemetry text-[10px] tracking-tight">Exp</span></a><a class="flex flex-col items-center justify-center gap-0.5 px-space-xs py-1 rounded-DEFAULT min-w-[48px] h-12 text-on-surface-variant transition-all" data-path="community" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-label-telemetry text-label-telemetry text-[10px] tracking-tight">Comm</span></a><a class="flex flex-col items-center justify-center gap-0.5 px-space-xs py-1 rounded-DEFAULT min-w-[48px] h-12 text-on-surface-variant transition-all" data-path="about" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-telemetry text-label-telemetry text-[10px] tracking-tight">About</span></a><a class="flex flex-col items-center justify-center gap-0.5 px-space-xs py-1 rounded-DEFAULT min-w-[48px] h-12 text-on-surface-variant transition-all" data-path="contact" href="#"><span class="material-symbols-outlined text-[20px]">send</span><span class="font-label-telemetry text-label-telemetry text-[10px] tracking-tight">Contact</span></a></div></nav></body></html>
